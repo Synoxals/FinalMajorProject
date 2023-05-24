@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Movement")]
     private Rigidbody2D rb;
-    public float speed = 10f;
+    public float speed = 7f;
     public float airSpeed = 7f;
 
     public float fallMultiplier = 2.5f;
@@ -178,7 +178,7 @@ public class PlayerController : MonoBehaviour
 
     private void WallSlide()
     {
-        if (IsWalled() && !isGrounded())
+        if (IsWalled() && !isGrounded() && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)))
         {
             isWallSliding = true;
             CreateWallDust();
